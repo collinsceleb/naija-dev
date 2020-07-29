@@ -21,6 +21,7 @@ class OverviewFragment : Fragment() {
         binding = OverviewFragmentBinding.inflate(layoutInflater)
         viewModel = ViewModelProvider(this).get(OverviewViewModel::class.java)
         binding.overviewViewModel = viewModel
+        binding.recycler.adapter = OverviewAdapter()
         binding.lifecycleOwner = this
         return binding.root
     }
