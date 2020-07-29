@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.DividerItemDecoration
 import com.bdn.collinsceleb.nigeriadevelopers.databinding.OverviewFragmentBinding
 
 class OverviewFragment : Fragment() {
@@ -21,15 +22,14 @@ class OverviewFragment : Fragment() {
         binding = OverviewFragmentBinding.inflate(layoutInflater)
         viewModel = ViewModelProvider(this).get(OverviewViewModel::class.java)
         binding.overviewViewModel = viewModel
+
         binding.recycler.adapter = OverviewAdapter()
+
+        // Add dividers between recyclerview's row items
+        val decoration = DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL)
+        binding.recycler.addItemDecoration(decoration)
         binding.lifecycleOwner = this
         return binding.root
     }
-
-//    override fun onActivityCreated(savedInstanceState: Bundle?) {
-//        super.onActivityCreated(savedInstanceState)
-//        viewModel = ViewModelProvider(this).get(OverviewViewModel::class.java)
-//        // Use the ViewModel
-//    }
 
 }

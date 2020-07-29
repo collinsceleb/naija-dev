@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="developer"
             type="com.bdn.collinsceleb.nigeriadevelopers.data.model.GithubUser" />
     </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -19,9 +20,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="26dp"
+            android:layout_marginTop="22dp"
             android:layout_marginEnd="16dp"
             android:text="@{developer.login}"
+            android:textAllCaps="true"
+            android:textColor="@color/colorPrimary"
+            android:textSize="12sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/developerImage"
             app:layout_constraintTop_toTopOf="@id/developerImage" />
@@ -31,24 +36,15 @@
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_marginTop="20dp"
+            app:imageUrl="@{developer.imageUrl}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
-            app:imageUrl="@{developer.imageUrl}"
             tools:srcCompat="@tools:sample/avatars" />
 
-        <!--    <View-->
-        <!--        android:layout_width="match_parent"-->
-        <!--        android:layout_height="1px"-->
-        <!--        android:layout_marginStart="70dp"-->
-        <!--        android:layout_marginTop="4dp"-->
-        <!--        app:layout_constraintEnd_toEndOf="parent"-->
-        <!--        app:layout_constraintStart_toStartOf="parent"-->
-        <!--        app:layout_constraintTop_toBottomOf="parent"-->
-        <!--         />-->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
